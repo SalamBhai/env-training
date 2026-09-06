@@ -928,111 +928,184 @@ export const slides: SlideDef[] = [
     id: "tools-ethics",
     title: "Tools, Ethics & Accountability",
     notes:
-      "Equip advocates with accessible digital tools, strict ethical guidelines (Do No Harm), and a structured accountability loop.",
+      "Comprehensive toolkit across 5 categories: Spatial mapping, community data collection, public records, research databases, and impact documentation. Plus ethical guardrails and accountability tracking.",
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="12: Practical Toolkit">
         <div>
-          <h2 className="slide-title" style={{ fontSize: 66 }}>
+          <h2 className="slide-title" style={{ fontSize: 62 }}>
             Tools, Ethics &amp; Accountability
           </h2>
         </div>
 
-        <div className="grid grid-cols-3 gap-6 items-stretch my-auto">
-          {/* Tools */}
-          <Card className="p-7 flex flex-col justify-between h-full">
+        <div className="grid grid-cols-12 gap-6 items-stretch my-auto">
+          {/* Left Column: 5 Tool Categories */}
+          <Card className="col-span-7 p-6 flex flex-col justify-between h-full">
             <div>
-              <div className="flex items-center gap-3 border-b-[2px] border-ink pb-2.5">
-                <span className="text-2xl">🛠️</span>
-                <h3 className="slide-subtitle font-display" style={{ fontSize: 26 }}>
-                  Tools
-                </h3>
+              <div className="flex items-center justify-between border-b-[2px] border-ink pb-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">🛠️</span>
+                  <h3 className="slide-subtitle font-display text-forest" style={{ fontSize: 24 }}>
+                    Operational Tools &amp; Data Sources
+                  </h3>
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-forest-deep bg-mint px-2 py-0.5 border border-ink">
+                  5 Categories
+                </span>
               </div>
-              <ul className="mt-5 space-y-2.5">
-                <Bullet>Google Maps / Google Earth</Bullet>
-                <Bullet>KoboToolbox (offline surveys)</Bullet>
-                <Bullet>Google Forms</Bullet>
-                <Bullet>OpenStreetMap</Bullet>
-                <Bullet>Government data portals</Bullet>
-                <Bullet>Scientific research databases</Bullet>
-              </ul>
-            </div>
-            <div className="mt-5 border-t border-ink/20 pt-2.5 text-xs uppercase font-bold text-forest">
-              Accessible &amp; Open Source
-            </div>
-          </Card>
 
-          {/* Ethics */}
-          <Card tone="forest" className="p-7 flex flex-col justify-between h-full">
-            <div>
-              <div className="flex items-center gap-3 border-b border-paper/20 pb-2.5">
-                <span className="text-2xl">⚖️</span>
-                <h3 className="slide-subtitle font-display text-paper" style={{ fontSize: 26 }}>
-                  Ethics
-                </h3>
-              </div>
-              <ul className="mt-5 space-y-2.5 text-paper">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-3 w-3 shrink-0 bg-mint" />
-                  <span className="slide-body opacity-95" style={{ fontSize: 22 }}>Ask for informed consent</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-3 w-3 shrink-0 bg-mint" />
-                  <span className="slide-body opacity-95" style={{ fontSize: 22 }}>Be rigorously accurate</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-3 w-3 shrink-0 bg-mint" />
-                  <span className="slide-body opacity-95" style={{ fontSize: 22 }}>Protect people's privacy</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-3 w-3 shrink-0 bg-mint" />
-                  <span className="slide-body opacity-95" style={{ fontSize: 22 }}>Preserve context; don't manipulate</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-3 w-3 shrink-0 bg-mint" />
-                  <span className="slide-body opacity-95" style={{ fontSize: 22 }}>Give proper attribution</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-3 w-3 shrink-0 bg-mint font-bold" />
-                  <span className="slide-body text-mint font-bold" style={{ fontSize: 22 }}>Do no harm</span>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-5 border-t border-paper/20 pt-2.5 text-xs uppercase font-bold text-mint">
-              Integrity &amp; Protection
-            </div>
-          </Card>
-
-          {/* Accountability */}
-          <Card tone="accent" className="p-7 flex flex-col justify-between h-full">
-            <div>
-              <div className="flex items-center gap-3 border-b-[2px] border-ink pb-2.5">
-                <span className="text-2xl">🎯</span>
-                <h3 className="slide-subtitle font-display text-forest-deep" style={{ fontSize: 26 }}>
-                  Accountability
-                </h3>
-              </div>
-              <p className="slide-caption mt-4 font-semibold text-forest-deep" style={{ fontSize: 18 }}>
-                Track measurable metrics across concrete timelines:
-              </p>
-              <div className="mt-4 space-y-2">
-                {[
-                  { k: "Baseline", v: "Where are we starting from?" },
-                  { k: "Indicator", v: "What metric will show progress?" },
-                  { k: "Target", v: "What specific result is expected?" },
-                  { k: "Timeline", v: "By when must it happen?" },
-                  { k: "Follow-up", v: "Who checks that it was done?" },
-                ].map((item) => (
-                  <div key={item.k} className="brut-flat border-[2px] bg-paper p-2.5">
-                    <span className="font-bold text-forest-deep text-sm">{item.k}: </span>
-                    <span className="text-xs opacity-90">{item.v}</span>
+              <div className="grid grid-cols-2 gap-3 mt-3">
+                {/* 1. Mapping & Spatial Evidence */}
+                <div className="brut-flat border-[2px] bg-paper p-3">
+                  <div className="text-[11px] font-bold uppercase text-forest tracking-wider mb-1">
+                    1. Mapping &amp; Spatial Evidence
                   </div>
-                ))}
+                  <ul className="text-xs font-semibold space-y-0.5 text-ink/90">
+                    <li>• Google Maps / Google Earth</li>
+                    <li>• OpenStreetMap</li>
+                  </ul>
+                </div>
+
+                {/* 2. Data Collection & Community Voices */}
+                <div className="brut-flat border-[2px] bg-paper p-3">
+                  <div className="text-[11px] font-bold uppercase text-forest tracking-wider mb-1">
+                    2. Data Collection &amp; Community Voices
+                  </div>
+                  <ul className="text-xs font-semibold space-y-0.5 text-ink/90">
+                    <li>• KoboToolbox</li>
+                    <li>• Google Forms</li>
+                    <li>• U-Report</li>
+                  </ul>
+                </div>
+
+                {/* 3. Government & Public Records */}
+                <div className="brut-flat border-[2px] bg-paper p-3">
+                  <div className="text-[11px] font-bold uppercase text-forest tracking-wider mb-1">
+                    3. Government &amp; Public Records
+                  </div>
+                  <ul className="text-xs font-semibold space-y-0.5 text-ink/90">
+                    <li>• National Bureau of Statistics (NBS)</li>
+                    <li>• Federal / State government data portals</li>
+                    <li>• Environmental assessment records</li>
+                    <li>• Freedom of Information (FOI) requests</li>
+                  </ul>
+                </div>
+
+                {/* 4. Research & Existing Data */}
+                <div className="brut-flat border-[2px] bg-paper p-3">
+                  <div className="text-[11px] font-bold uppercase text-forest tracking-wider mb-1">
+                    4. Research &amp; Existing Data
+                  </div>
+                  <ul className="text-xs font-semibold space-y-0.5 text-ink/90">
+                    <li>• Google Scholar</li>
+                    <li>• PubMed</li>
+                    <li>• ResearchGate</li>
+                    <li>• Google Dataset Search</li>
+                  </ul>
+                </div>
+
+                {/* 5. Impact Documentation & Advocacy */}
+                <div className="col-span-2 brut-flat border-[2px] bg-paper p-3">
+                  <div className="text-[11px] font-bold uppercase text-forest tracking-wider mb-1">
+                    5. Impact Documentation &amp; Advocacy
+                  </div>
+                  <div className="flex items-center gap-4 text-xs font-semibold text-ink/90 flex-wrap">
+                    <span>• QS Impact</span>
+                    <span>• Project impact reports</span>
+                    <span>• Field reports</span>
+                    <span>• Monitoring records</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="mt-5 border-t border-ink/20 pt-2.5 text-xs uppercase font-bold text-forest-deep">
-              Measurable Commitments
+
+            <div className="mt-2 border-t border-ink/20 pt-2 text-[10px] font-bold uppercase text-forest tracking-wider">
+              Empirical Gathering Toolkit
             </div>
           </Card>
+
+          {/* Right Column: Ethics & Accountability */}
+          <div className="col-span-5 flex flex-col justify-between gap-4">
+            {/* ETHICS Card */}
+            <Card tone="forest" className="p-6 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between border-b border-paper/20 pb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">⚖️</span>
+                    <h3 className="slide-subtitle font-display text-paper" style={{ fontSize: 24 }}>
+                      Ethics
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-bold uppercase text-mint tracking-wider">
+                    Core Principles
+                  </span>
+                </div>
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-2 mt-3 text-paper">
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 shrink-0 bg-mint" />
+                    <span className="text-xs font-semibold">Ask for consent</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 shrink-0 bg-mint" />
+                    <span className="text-xs font-semibold">Be accurate</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 shrink-0 bg-mint" />
+                    <span className="text-xs font-semibold">Protect people's privacy</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 shrink-0 bg-mint" />
+                    <span className="text-xs font-semibold">Keep context</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 shrink-0 bg-mint" />
+                    <span className="text-xs font-semibold">Give proper attribution</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2.5 w-2.5 shrink-0 bg-mint font-bold" />
+                    <span className="text-xs font-bold text-mint">Do no harm</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-3 border-t border-paper/20 pt-2 text-[10px] font-bold uppercase text-mint tracking-wider">
+                Integrity &amp; Protection
+              </div>
+            </Card>
+
+            {/* ACCOUNTABILITY Card */}
+            <Card tone="accent" className="p-6 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between border-b-[2px] border-ink pb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🎯</span>
+                    <h3 className="slide-subtitle font-display text-forest-deep" style={{ fontSize: 24 }}>
+                      Accountability
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-bold uppercase text-forest-deep tracking-wider">
+                    Verification Loop
+                  </span>
+                </div>
+                <p className="text-xs font-semibold text-forest-deep opacity-85 mt-2">
+                  Structured chain for measuring progress and sustaining institutional follow-up:
+                </p>
+                <div className="mt-3 flex items-center justify-between gap-1">
+                  {["Baseline", "Indicator", "Target", "Timeline", "Follow-up"].map((step, i) => (
+                    <div key={step} className="flex items-center gap-1">
+                      <div className="brut-flat border-[2px] bg-paper px-2 py-1.5 text-center">
+                        <span className="font-display font-bold text-[11px] text-forest-deep block">
+                          {step}
+                        </span>
+                      </div>
+                      {i < 4 ? <span className="text-xs font-black text-forest-deep">→</span> : null}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-3 border-t border-ink/20 pt-2 text-[10px] font-bold uppercase text-forest-deep tracking-wider">
+                Measurable Commitments
+              </div>
+            </Card>
+          </div>
         </div>
       </SlideLayout>
     ),
