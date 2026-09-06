@@ -15,7 +15,6 @@ A 16-slide interactive, responsive presentation deck built with Vite, React, and
 - **Lightweight Export Engine**:
   - **Export PDF**: Generates compressed high-fidelity PDFs via `jsPDF`.
   - **Export ZIP**: Fast slide image zipping powered by the ultra-lightweight `fflate` engine (~8KB).
-  - **Print / Vector PDF**: Instant native browser 1-click vector print stylesheet (`window.print()`).
 
 ## 🚀 Getting Started
 

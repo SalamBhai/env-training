@@ -4,7 +4,6 @@ import { slides } from "@/components/deck/slides";
 import {
   downloadAllPngsZip,
   downloadPdf,
-  printVectorPdf,
 } from "@/components/deck/exportDeck";
 
 export function App() {
@@ -103,12 +102,6 @@ export function App() {
           </button>
           <span className="mx-1 h-5 w-[2px] bg-ink/20" />
           <button
-            className="deck-ui-btn px-3 py-1.5 text-sm font-semibold"
-            onClick={() => printVectorPdf()}
-          >
-            Print / Vector PDF
-          </button>
-          <button
             className="deck-ui-btn px-3 py-1.5 text-sm font-semibold bg-mint"
             disabled={!!busy}
             onClick={() =>
@@ -180,15 +173,6 @@ export function App() {
                   Present Mode
                 </button>
                 <div className="my-1 border-t border-ink/20" />
-                <button
-                  className="w-full text-left px-3 py-2 text-sm font-semibold hover:bg-mint"
-                  onClick={() => {
-                    printVectorPdf();
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  Print / Vector PDF
-                </button>
                 <button
                   className="w-full text-left px-3 py-2 text-sm font-semibold hover:bg-mint"
                   disabled={!!busy}
