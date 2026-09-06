@@ -20,13 +20,13 @@ export function SlideLayout({
   return (
     <div className={`slide-content ${bg} ${fg}`}>
       <div className={`absolute inset-0 grid-paper ${tone === "forest" ? "opacity-25" : ""}`} />
-      <div className="relative flex h-full flex-col justify-between px-[80px] py-[44px]">
+      <div className="relative flex h-full flex-col justify-between px-[80px] pt-[36px] pb-[30px]">
         {/* Header */}
-        <header className="flex shrink-0 items-center justify-between">
+        <header className="flex shrink-0 items-center justify-between pb-2">
           <div className="flex items-center gap-4">
             <span
-              className={`slide-kicker font-bold tracking-wider brut-flat border-[3px] px-4 py-1.5 ${
-                tone === "forest" ? "bg-mint text-ink" : "bg-paper text-ink"
+              className={`slide-kicker font-bold tracking-wider brut-flat border-[3px] px-5 py-1.5 ${
+                tone === "forest" ? "bg-mint text-ink" : "bg-mint text-ink"
               }`}
             >
               {label ?? "Environmental Advocacy"}
@@ -34,7 +34,7 @@ export function SlideLayout({
           </div>
           {typeof index === "number" && typeof total === "number" ? (
             <span
-              className={`slide-page brut-flat border-[3px] px-5 py-2 font-bold ${
+              className={`slide-page brut-flat border-[3px] px-5 py-1.5 font-bold ${
                 tone === "forest" ? "bg-mint text-ink" : "bg-card text-ink"
               }`}
             >
@@ -44,12 +44,12 @@ export function SlideLayout({
         </header>
 
         {/* Content Body */}
-        <main className="flex min-h-0 flex-1 flex-col justify-between py-3 overflow-hidden">
+        <main className="flex min-h-0 flex-1 flex-col justify-between py-2 overflow-hidden">
           {children}
         </main>
 
         {/* Footer */}
-        <footer className="flex shrink-0 items-center justify-between border-t-[2px] border-ink/20 pt-2.5">
+        <footer className="flex shrink-0 items-center justify-between border-t-[3px] border-ink/20 pt-3">
           <span
             className="slide-footer tracking-widest uppercase opacity-75 font-semibold"
             style={{ fontSize: 16 }}
@@ -113,7 +113,7 @@ export function Kicker({
 
 export function Bullet({ children }: { children: ReactNode }) {
   return (
-    <li className="flex items-start gap-3.5">
+    <li className="flex items-start gap-3">
       <span className="mt-[6px] block h-[14px] w-[14px] shrink-0 border-[3px] border-ink bg-mint" />
       <span className="slide-body font-medium leading-snug">{children}</span>
     </li>

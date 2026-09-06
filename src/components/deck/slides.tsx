@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { SlideLayout, Card, Kicker, Bullet } from "./SlideLayout";
+import { SlideLayout, Card, Bullet } from "./SlideLayout";
 
 export type SlideDef = {
   id: string;
@@ -81,9 +81,8 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="02: Conceptual Foundations">
         <div>
-          <Kicker>Conceptual Foundations</Kicker>
-          <h2 className="slide-title mt-4 max-w-[1550px]" style={{ fontSize: 68 }}>
-            Environmental advocacy is more than carrying out environmental activities.
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
+            What Do We Really Mean by Environmental Advocacy?
           </h2>
         </div>
 
@@ -112,7 +111,7 @@ export const slides: SlideDef[] = [
             <div>
               <div className="slide-kicker text-mint mb-3">Important Clarification</div>
               <h3 className="slide-subtitle text-paper font-display" style={{ fontSize: 34 }}>
-                Disclaimer:
+                Disclaimer
               </h3>
               <p className="slide-body mt-4 leading-relaxed opacity-95 text-paper" style={{ fontSize: 24 }}>
                 This is not about ridiculing cleanups or saying they are unnecessary. Cleanups are important.
@@ -141,8 +140,7 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="03: The Advocacy Lifecycle" tone="mint">
         <div>
-          <Kicker>The Advocacy Lifecycle</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
             From Concern to Change: The 7 Core Responsibilities
           </h2>
         </div>
@@ -160,7 +158,7 @@ export const slides: SlideDef[] = [
             <Card key={item.step} className="p-5 flex flex-col justify-between h-full">
               <div>
                 <span className="slide-kicker text-forest font-bold">{item.step}</span>
-                <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 26 }}>
+                <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 24 }}>
                   {item.name}
                 </h3>
               </div>
@@ -192,10 +190,6 @@ export const slides: SlideDef[] = [
       "Focus on the contrast between subjective observation ('I saw it') and verifiable proof ('I can demonstrate it').",
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="04: The Evidence Gap">
-        <div>
-          <Kicker>Perception vs. Demonstration</Kicker>
-        </div>
-
         <div className="grid grid-cols-12 gap-8 items-stretch my-auto">
           {/* Big Quote Card */}
           <Card tone="forest" className="col-span-5 p-10 flex flex-col justify-between">
@@ -274,8 +268,7 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="05: Evidence Taxonomy">
         <div>
-          <Kicker>Taxonomy of Proof</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
             What Counts as Environmental Evidence?
           </h2>
         </div>
@@ -374,8 +367,7 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="06: Methodology Shift">
         <div>
-          <Kicker>Methodology Shift</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
             The Wrong Way vs. The Evidence-Backed Way
           </h2>
         </div>
@@ -466,11 +458,10 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="07: The Framework" tone="mint">
         <div>
-          <Kicker>Strategic Framework</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
             The Evidence-Backed Advocacy Framework
           </h2>
-          <div className="mt-3 inline-block brut-flat border-[2px] bg-paper px-5 py-1.5">
+          <div className="mt-2 inline-block brut-flat border-[2px] bg-paper px-5 py-1">
             <span className="slide-caption font-bold text-forest-deep tracking-wider" style={{ fontSize: 18 }}>
               Concern → Investigate → Evidence → Advocacy → Accountability → Action → Sustainability
             </span>
@@ -554,15 +545,14 @@ export const slides: SlideDef[] = [
       "Case study: WaveWise Climate Resilience Project at Itowolo Community Primary School. How field observation uncovered issues far beyond waste.",
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="08: Case Study · WaveWise">
-        <div className="flex items-center gap-4">
-          <Kicker>Case Study: WaveWise</Kicker>
-          <span className="slide-kicker brut-flat border-[2px] bg-paper px-4 py-1 text-forest font-bold">
+        <div className="flex items-center justify-between">
+          <h2 className="slide-title" style={{ fontSize: 64 }}>
+            WaveWise Climate Resilience Project: The Problem → The Evidence
+          </h2>
+          <span className="slide-badge brut-flat border-[2px] bg-mint px-4 py-1.5 text-forest-deep font-bold text-xs">
             Clime With Me × Clean Air 360
           </span>
         </div>
-        <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
-          WaveWise Climate Resilience Project: The Problem → The Evidence
-        </h2>
 
         <div className="grid grid-cols-12 gap-8 items-stretch my-auto">
           {/* Left card: Context */}
@@ -623,8 +613,7 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="09: Case Study · WaveWise Outcome">
         <div>
-          <Kicker tone="forest">When Advocacy Goes Beyond the Activity</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
             WaveWise: From Evidence to Change
           </h2>
         </div>
@@ -725,8 +714,7 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="10: Global & Regional Cases">
         <div>
-          <Kicker>Evidence in Action</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
             Other Evidence-Backed Advocacy Cases
           </h2>
         </div>
@@ -830,7 +818,7 @@ export const slides: SlideDef[] = [
   },
 
   /* ==========================================================================
-     SLIDE 11: HOW DO WE GATHER & DOCUMENT EVIDENCE? (FIXED SLIDE)
+     SLIDE 11: HOW DO WE GATHER & DOCUMENT EVIDENCE?
      ========================================================================== */
   {
     id: "how-to-gather",
@@ -944,8 +932,7 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="12: Practical Toolkit">
         <div>
-          <Kicker>Operational Toolkit</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 66 }}>
             Tools, Ethics &amp; Accountability
           </h2>
         </div>
@@ -1052,7 +1039,7 @@ export const slides: SlideDef[] = [
   },
 
   /* ==========================================================================
-     SLIDE 13: FROM ADVOCATE TO CHANGE AGENT
+     SLIDE 13: FROM ADVOCATE TO CHANGE AGENT (FIXED)
      ========================================================================== */
   {
     id: "change-agent",
@@ -1062,57 +1049,56 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="13: Mindset Transformation">
         <div>
-          <Kicker>Mindset Transformation</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
-            From Advocate to Change Agent: Two Approaches
+          <h2 className="slide-title" style={{ fontSize: 62 }}>
+            From Advocate to Change Agent: Two Different Approaches
           </h2>
         </div>
 
         <div className="grid grid-cols-2 gap-8 items-stretch my-auto">
-          <Card tone="muted" className="p-8 flex flex-col justify-between">
+          <Card tone="muted" className="p-7 flex flex-col justify-between">
             <div>
               <span className="slide-kicker text-slate-700 font-bold">Standard Routine</span>
-              <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 32 }}>
+              <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 30 }}>
                 Activity-Focused
               </h3>
-              <div className="mt-5 brut-flat border-[2px] bg-paper p-5 text-center">
+              <div className="mt-4 brut-flat border-[2px] bg-paper p-4 text-center">
                 <p className="slide-body font-bold text-ink" style={{ fontSize: 20 }}>
                   Problem → Activity → Photos → Publicity → End
                 </p>
               </div>
-              <p className="slide-body mt-6 opacity-80 leading-relaxed" style={{ fontSize: 22 }}>
+              <p className="slide-body mt-5 opacity-80 leading-relaxed" style={{ fontSize: 20 }}>
                 Produces short-term awareness and feel-good photo ops, but leaves the underlying political, municipal, and institutional drivers untouched.
               </p>
             </div>
-            <div className="mt-6 border-t border-ink/20 pt-3 text-xs font-bold uppercase tracking-wider text-slate-700">
+            <div className="mt-5 border-t border-ink/20 pt-2.5 text-xs font-bold uppercase tracking-wider text-slate-700">
               Temporary · Event-Bound
             </div>
           </Card>
 
-          <Card tone="forest" className="p-8 flex flex-col justify-between">
+          <Card tone="forest" className="p-7 flex flex-col justify-between">
             <div>
               <span className="slide-kicker text-mint font-bold">Strategic Power</span>
-              <h3 className="slide-subtitle font-display mt-2 text-paper" style={{ fontSize: 32 }}>
+              <h3 className="slide-subtitle font-display mt-2 text-paper" style={{ fontSize: 30 }}>
                 Evidence-Backed
               </h3>
-              <div className="mt-5 brut-flat border-[2px] border-paper bg-forest-deep p-5 text-center">
+              <div className="mt-4 brut-flat border-[2px] border-paper bg-forest-deep p-4 text-center">
                 <p className="slide-body font-bold text-mint" style={{ fontSize: 20 }}>
                   Concern → Evidence → Advocacy → Accountability → Action → Sustainable Change
                 </p>
               </div>
-              <p className="slide-body mt-6 opacity-95 text-paper leading-relaxed" style={{ fontSize: 22 }}>
+              <p className="slide-body mt-5 opacity-95 text-paper leading-relaxed" style={{ fontSize: 20 }}>
                 Connects community ground-observations with verifiable data, directly influencing policies, government infrastructure budgets, and enforcement.
               </p>
             </div>
-            <div className="mt-6 border-t border-paper/20 pt-3 text-xs font-bold uppercase tracking-wider text-mint">
+            <div className="mt-5 border-t border-paper/20 pt-2.5 text-xs font-bold uppercase tracking-wider text-mint">
               Transformative · Systemic
             </div>
           </Card>
         </div>
 
         {/* Hero Callout Quote */}
-        <Card tone="accent" className="p-6 text-center">
-          <blockquote className="slide-subtitle font-display text-forest-deep leading-snug" style={{ fontSize: 32 }}>
+        <Card tone="accent" className="px-8 py-4 text-center">
+          <blockquote className="slide-subtitle font-display text-forest-deep leading-snug" style={{ fontSize: 28 }}>
             “The shift is simple: Don’t just document that a problem exists. Build the evidence that helps change it.”
           </blockquote>
         </Card>
@@ -1121,74 +1107,117 @@ export const slides: SlideDef[] = [
   },
 
   /* ==========================================================================
-     SLIDE 14: WHERE DO YOU GO FROM HERE?
+     SLIDE 14: WHERE DO YOU GO FROM HERE? (SECTION REMOVED AS REQUESTED)
      ========================================================================== */
   {
     id: "action-plan",
     title: "Where Do You Go From Here?",
     notes:
-      "A concrete, actionable roadmap for participants to take into their own communities.",
+      "A concrete, actionable 7-step roadmap for participants to deploy into their own communities.",
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="14: Call to Action" tone="mint">
         <div>
-          <Kicker>Action Roadmap</Kicker>
-          <h2 className="slide-title mt-4" style={{ fontSize: 68 }}>
+          <h2 className="slide-title" style={{ fontSize: 64 }}>
             Where Do You Go From Here?
           </h2>
+          <p className="slide-caption font-semibold opacity-85 text-forest-deep mt-1" style={{ fontSize: 22 }}>
+            Your immediate community advocacy playbook: from finding a problem to driving sustained accountability.
+          </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-8 items-stretch my-auto">
-          {/* Action Steps */}
-          <Card className="col-span-7 p-8 flex flex-col justify-between">
-            <div>
-              <span className="slide-kicker text-forest">Your Immediate Playbook</span>
-              <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 30 }}>
-                Start with a problem around you.
-              </h3>
-              <ol className="mt-5 space-y-2.5 font-semibold list-decimal pl-6 text-lg">
-                <li><strong>Find it:</strong> Identify an acute environmental challenge in your neighborhood.</li>
-                <li><strong>Ask questions:</strong> Dig into why it is happening and who is responsible.</li>
-                <li><strong>Gather evidence:</strong> Collect photos, testimonies, coordinates, and samples.</li>
-                <li><strong>Document what you find:</strong> Package your data into an objective, factual brief.</li>
-                <li><strong>Find the right people to engage:</strong> Map leaders, regulators, and civic groups.</li>
-                <li><strong>Take action:</strong> Build coalitions and deploy targeted advocacy.</li>
-                <li><strong>Follow up:</strong> Measure the outcome and demand sustained accountability.</li>
-              </ol>
-            </div>
-          </Card>
-
-          {/* Recommended Communities */}
-          <div className="col-span-5 flex flex-col justify-between gap-5">
-            <Card tone="forest" className="p-7">
-              <span className="slide-kicker text-mint">Get Connected</span>
-              <h3 className="slide-subtitle text-paper mt-2" style={{ fontSize: 26 }}>
-                Communities to Learn From &amp; Volunteer With
-              </h3>
-              <p className="slide-caption text-paper opacity-90 mt-3 leading-relaxed" style={{ fontSize: 16 }}>
-                Connect with active organizations leveraging data and community action:
-              </p>
-              <div className="mt-5 space-y-2.5">
-                {[
-                  { name: "Clime With Me", role: "Climate advocacy & youth grassroots resilience" },
-                  { name: "Clean Air 360", role: "Air quality monitoring & environmental education" },
-                  { name: "WaveWise Climate Resilience", role: "Flood adaptation & community school restoration" },
-                  { name: "Dattego Ecosystem", role: "Circular economy platform & resource tracking" },
-                ].map((org) => (
-                  <div key={org.name} className="brut-flat border-[2px] border-paper bg-forest-deep p-2.5">
-                    <div className="font-bold text-mint text-sm">{org.name}</div>
-                    <div className="text-xs text-paper opacity-80">{org.role}</div>
-                  </div>
-                ))}
+        <Card className="p-8 my-auto">
+          <div className="grid grid-cols-2 gap-x-12 gap-y-6">
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border-[3px] border-ink bg-mint font-display font-extrabold text-lg">
+                01
+              </span>
+              <div>
+                <h4 className="font-display font-bold text-xl text-forest">Find it</h4>
+                <p className="text-base opacity-85 leading-relaxed mt-0.5">
+                  Identify an acute, tangible environmental challenge in your local neighborhood or community.
+                </p>
               </div>
-            </Card>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border-[3px] border-ink bg-mint font-display font-extrabold text-lg">
+                02
+              </span>
+              <div>
+                <h4 className="font-display font-bold text-xl text-forest">Ask questions</h4>
+                <p className="text-base opacity-85 leading-relaxed mt-0.5">
+                  Dig into why it is happening, who is impacted, and who has formal regulatory responsibility.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border-[3px] border-ink bg-mint font-display font-extrabold text-lg">
+                03
+              </span>
+              <div>
+                <h4 className="font-display font-bold text-xl text-forest">Gather evidence</h4>
+                <p className="text-base opacity-85 leading-relaxed mt-0.5">
+                  Collect visual documentation, resident testimonies, precise GPS coordinates, and samples.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border-[3px] border-ink bg-mint font-display font-extrabold text-lg">
+                04
+              </span>
+              <div>
+                <h4 className="font-display font-bold text-xl text-forest">Document what you find</h4>
+                <p className="text-base opacity-85 leading-relaxed mt-0.5">
+                  Synthesize your findings into a clear, fact-based, undeniable evidence dossier.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border-[3px] border-ink bg-mint font-display font-extrabold text-lg">
+                05
+              </span>
+              <div>
+                <h4 className="font-display font-bold text-xl text-forest">Find the right people</h4>
+                <p className="text-base opacity-85 leading-relaxed mt-0.5">
+                  Map community leaders, local regulators, municipal agencies, and civic coalitions to engage.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border-[3px] border-ink bg-mint font-display font-extrabold text-lg">
+                06
+              </span>
+              <div>
+                <h4 className="font-display font-bold text-xl text-forest">Take action</h4>
+                <p className="text-base opacity-85 leading-relaxed mt-0.5">
+                  Deploy targeted, constructive advocacy backed by data to demand structural solutions.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-span-2 flex items-start gap-4 border-t border-ink/20 pt-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center border-[3px] border-ink bg-forest text-paper font-display font-extrabold text-lg">
+                07
+              </span>
+              <div>
+                <h4 className="font-display font-bold text-xl text-forest">Follow up relentlessly</h4>
+                <p className="text-base opacity-85 leading-relaxed mt-0.5">
+                  Track timelines, measure post-intervention change, and hold duty-bearers accountable until lasting change is achieved.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </Card>
       </SlideLayout>
     ),
   },
 
   /* ==========================================================================
-     SLIDE 15: RESOURCES & PROJECT ARCHIVE (SECOND-TO-LAST SLIDE)
+     SLIDE 15: RESOURCES & PROJECT ARCHIVE (BOTTOM BANNER OVERFLOW REMOVED)
      ========================================================================== */
   {
     id: "resources",
@@ -1198,8 +1227,7 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="15: Resources & References" tone="paper">
         <div>
-          <Kicker>Project Archive &amp; References</Kicker>
-          <h2 className="slide-title mt-3" style={{ fontSize: 64 }}>
+          <h2 className="slide-title" style={{ fontSize: 64 }}>
             Key Resources &amp; Reference Materials
           </h2>
           <p className="slide-caption font-semibold opacity-80 mt-1" style={{ fontSize: 18 }}>
@@ -1220,7 +1248,7 @@ export const slides: SlideDef[] = [
               <p className="text-xs opacity-80 mt-2 font-medium">
                 Itowolo Community Primary School flood resilience &amp; school rebuild documentation.
               </p>
-              <div className="mt-4 flex flex-col gap-2">
+              <div className="mt-4 flex flex-col gap-2.5">
                 <a
                   href="https://youtube.com/shorts/NB2ybNE5ZNU?si=CQiaVeIsidrp9kYp"
                   target="_blank"
@@ -1278,7 +1306,7 @@ export const slides: SlideDef[] = [
               <p className="text-xs text-paper opacity-80 mt-2 font-medium">
                 Formal legal, scientific, and community environmental assessments.
               </p>
-              <div className="mt-4 flex flex-col gap-2">
+              <div className="mt-4 flex flex-col gap-2.5">
                 <a
                   href="https://www.amnesty.org/en/latest/news/2018/03/Niger-Delta-Oil-Spills-Decoders/"
                   target="_blank"
@@ -1336,13 +1364,13 @@ export const slides: SlideDef[] = [
               <p className="text-xs font-semibold text-forest-deep opacity-85 mt-2">
                 Data collection toolkits and speaker contact link.
               </p>
-              <div className="mt-4 flex flex-col gap-2">
-                <div className="brut-flat border-[2px] bg-paper p-2">
+              <div className="mt-4 flex flex-col gap-2.5">
+                <div className="brut-flat border-[2px] bg-paper p-2.5">
                   <div className="font-bold text-xs text-forest-deep">KoboToolbox &amp; OpenStreetMap</div>
                   <div className="text-[10px] opacity-75 font-mono">kobotoolbox.org · openstreetmap.org</div>
                 </div>
 
-                <div className="brut-flat border-[2px] bg-paper p-2">
+                <div className="brut-flat border-[2px] bg-paper p-2.5">
                   <div className="font-bold text-xs text-forest-deep">Dattego Circular Platform</div>
                   <div className="text-[10px] opacity-75 font-mono">dattego.vercel.app</div>
                 </div>
@@ -1366,12 +1394,6 @@ export const slides: SlideDef[] = [
             </div>
           </Card>
         </div>
-
-        <Card tone="mint" className="px-6 py-2.5 text-center">
-          <span className="slide-caption font-bold text-forest-deep" style={{ fontSize: 18 }}>
-            All links are fully active in this presentation, preserved in the downloaded PDF, and printed with visible addresses.
-          </span>
-        </Card>
       </SlideLayout>
     ),
   },
