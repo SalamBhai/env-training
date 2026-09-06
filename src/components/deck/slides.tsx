@@ -145,36 +145,60 @@ export const slides: SlideDef[] = [
           </h2>
         </div>
 
-        <div className="grid grid-cols-7 gap-4 items-stretch flex-1 my-4">
-          {[
-            { step: "01", name: "Identify", question: "What is the problem?" },
-            { step: "02", name: "Investigate", question: "What is actually happening?" },
-            { step: "03", name: "Document", question: "What evidence can we gather?" },
-            { step: "04", name: "Mobilise", question: "Who needs to be involved?" },
-            { step: "05", name: "Advocate", question: "Who needs to hear this?" },
-            { step: "06", name: "Hold Accountable", question: "What needs to change?" },
-            { step: "07", name: "Sustain", question: "How do we make change last?" },
-          ].map((item) => (
-            <Card key={item.step} className="p-6 flex flex-col justify-between h-full">
-              <div>
-                <span className="slide-kicker text-forest font-bold" style={{ fontSize: 22 }}>{item.step}</span>
-                <h3 className="slide-subtitle font-display mt-3" style={{ fontSize: 28 }}>
-                  {item.name}
-                </h3>
-              </div>
-              <div className="mt-6 border-t-[2px] border-ink/20 pt-4">
-                <p className="slide-caption font-semibold opacity-85 leading-snug" style={{ fontSize: 20 }}>
-                  {item.question}
-                </p>
-              </div>
-            </Card>
-          ))}
-        </div>
+        <div className="flex flex-col gap-5 my-auto">
+          {/* Row 1: Steps 01 to 04 */}
+          <div className="grid grid-cols-4 gap-6">
+            {[
+              { step: "01", name: "Identify", question: "What is the problem?" },
+              { step: "02", name: "Investigate", question: "What is actually happening?" },
+              { step: "03", name: "Document", question: "What evidence can we gather?" },
+              { step: "04", name: "Mobilise", question: "Who needs to be involved?" },
+            ].map((item) => (
+              <Card key={item.step} className="p-7 flex flex-col justify-between">
+                <div>
+                  <span className="slide-kicker text-forest font-bold" style={{ fontSize: 20 }}>{item.step}</span>
+                  <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 30 }}>
+                    {item.name}
+                  </h3>
+                </div>
+                <div className="mt-5 border-t-[2px] border-ink/20 pt-3">
+                  <p className="slide-caption font-semibold opacity-90 leading-snug" style={{ fontSize: 20 }}>
+                    {item.question}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
 
-        <div className="flex items-center justify-center">
-          <span className="slide-caption font-bold uppercase tracking-widest text-forest-deep" style={{ fontSize: 18 }}>
-            Systematic Process · Progressive Iteration · Long-Term Impact
-          </span>
+          {/* Row 2: Steps 05 to 07 + Core Loop Summary */}
+          <div className="grid grid-cols-4 gap-6">
+            {[
+              { step: "05", name: "Advocate", question: "Who needs to hear this?" },
+              { step: "06", name: "Hold Accountable", question: "What needs to change?" },
+              { step: "07", name: "Sustain", question: "How do we make change last?" },
+            ].map((item) => (
+              <Card key={item.step} className="p-7 flex flex-col justify-between">
+                <div>
+                  <span className="slide-kicker text-forest font-bold" style={{ fontSize: 20 }}>{item.step}</span>
+                  <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 30 }}>
+                    {item.name}
+                  </h3>
+                </div>
+                <div className="mt-5 border-t-[2px] border-ink/20 pt-3">
+                  <p className="slide-caption font-semibold opacity-90 leading-snug" style={{ fontSize: 20 }}>
+                    {item.question}
+                  </p>
+                </div>
+              </Card>
+            ))}
+
+            <Card tone="forest" className="p-7 flex flex-col justify-center">
+              <span className="slide-kicker text-mint font-bold" style={{ fontSize: 16 }}>The Core Loop</span>
+              <p className="slide-body font-display text-paper font-bold mt-2 leading-snug" style={{ fontSize: 22 }}>
+                Systematic process · Progressive iteration · Long-term accountability
+              </p>
+            </Card>
+          </div>
         </div>
       </SlideLayout>
     ),
@@ -458,78 +482,112 @@ export const slides: SlideDef[] = [
     render: ({ index, total }) => (
       <SlideLayout index={index} total={total} label="07: The Framework" tone="mint">
         <div>
-          <h2 className="slide-title" style={{ fontSize: 72 }}>
+          <h2 className="slide-title" style={{ fontSize: 68 }}>
             The Evidence-Backed Advocacy Framework
           </h2>
-          <div className="mt-3 inline-block brut-flat border-[3px] bg-paper px-6 py-2">
-            <span className="slide-caption font-bold text-forest-deep tracking-wider" style={{ fontSize: 20 }}>
+          <div className="mt-2 inline-block brut-flat border-[3px] bg-paper px-6 py-1.5">
+            <span className="slide-caption font-bold text-forest-deep tracking-wider" style={{ fontSize: 18 }}>
               Concern → Investigate → Evidence → Advocacy → Accountability → Action → Sustainability
             </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-7 gap-4 items-stretch flex-1 my-4">
-          {[
-            {
-              step: "01",
-              phase: "CONCERN",
-              question: "What is happening?",
-              desc: "Initial awareness of environmental anomaly or community harm.",
-            },
-            {
-              step: "02",
-              phase: "INVESTIGATE",
-              question: "What do we know?",
-              desc: "Deep-dive inquiry into ground facts, records, and context.",
-            },
-            {
-              step: "03",
-              phase: "EVIDENCE",
-              question: "What can we demonstrate?",
-              desc: "Empirical proof: photos, data, surveys, samples, and logs.",
-            },
-            {
-              step: "04",
-              phase: "ADVOCACY",
-              question: "Who needs to hear it?",
-              desc: "Targeted communication to power holders & public.",
-            },
-            {
-              step: "05",
-              phase: "ACCOUNTABILITY",
-              question: "What needs to change?",
-              desc: "Identifying responsible parties and policy obligations.",
-            },
-            {
-              step: "06",
-              phase: "ACTION",
-              question: "What can we do?",
-              desc: "Direct interventions, cleanups, legal action, lobbying.",
-            },
-            {
-              step: "07",
-              phase: "SUSTAINABILITY",
-              question: "How does it last?",
-              desc: "Continuous monitoring, maintenance, and policy anchoring.",
-            },
-          ].map((col) => (
-            <Card key={col.step} className="p-6 flex flex-col justify-between h-full">
-              <div>
-                <span className="slide-kicker text-forest font-bold" style={{ fontSize: 22 }}>{col.step}</span>
-                <h3 className="slide-subtitle font-display mt-2" style={{ fontSize: 24 }}>
-                  {col.phase}
-                </h3>
-                <div className="mt-4 brut-flat border-[2px] bg-mint/40 p-3.5">
-                  <p className="slide-caption font-extrabold text-forest-deep leading-snug" style={{ fontSize: 18 }}>
-                    {col.question}
-                  </p>
+        <div className="flex flex-col gap-4 my-auto">
+          {/* Row 1: Phases 01 to 04 */}
+          <div className="grid grid-cols-4 gap-5">
+            {[
+              {
+                step: "01",
+                phase: "CONCERN",
+                question: "What is happening?",
+                desc: "Initial awareness of environmental anomaly or community harm.",
+              },
+              {
+                step: "02",
+                phase: "INVESTIGATE",
+                question: "What do we know?",
+                desc: "Deep-dive inquiry into ground facts, records, and context.",
+              },
+              {
+                step: "03",
+                phase: "EVIDENCE",
+                question: "What can we demonstrate?",
+                desc: "Empirical proof: photos, data, surveys, samples, and logs.",
+              },
+              {
+                step: "04",
+                phase: "ADVOCACY",
+                question: "Who needs to hear it?",
+                desc: "Targeted communication to power holders, regulators & public.",
+              },
+            ].map((col) => (
+              <Card key={col.step} className="p-6 flex flex-col justify-between">
+                <div>
+                  <span className="slide-kicker text-forest font-bold" style={{ fontSize: 18 }}>{col.step}</span>
+                  <h3 className="slide-subtitle font-display mt-1" style={{ fontSize: 24 }}>
+                    {col.phase}
+                  </h3>
+                  <div className="mt-3 brut-flat border-[2px] bg-mint/40 p-2.5">
+                    <p className="slide-caption font-extrabold text-forest-deep leading-tight" style={{ fontSize: 18 }}>
+                      {col.question}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <p className="slide-caption mt-6 opacity-85 leading-relaxed font-medium" style={{ fontSize: 17 }}>
-                {col.desc}
+                <p className="slide-caption mt-4 opacity-85 leading-relaxed font-medium" style={{ fontSize: 16 }}>
+                  {col.desc}
+                </p>
+              </Card>
+            ))}
+          </div>
+
+          {/* Row 2: Phases 05 to 07 + Closed Loop Banner */}
+          <div className="grid grid-cols-4 gap-5">
+            {[
+              {
+                step: "05",
+                phase: "ACCOUNTABILITY",
+                question: "What needs to change?",
+                desc: "Identifying responsible parties and formal policy obligations.",
+              },
+              {
+                step: "06",
+                phase: "ACTION",
+                question: "What can we do?",
+                desc: "Direct interventions, cleanups, legal action, and policy lobbying.",
+              },
+              {
+                step: "07",
+                phase: "SUSTAINABILITY",
+                question: "How does it last?",
+                desc: "Continuous monitoring, maintenance, and policy anchoring.",
+              },
+            ].map((col) => (
+              <Card key={col.step} className="p-6 flex flex-col justify-between">
+                <div>
+                  <span className="slide-kicker text-forest font-bold" style={{ fontSize: 18 }}>{col.step}</span>
+                  <h3 className="slide-subtitle font-display mt-1" style={{ fontSize: 24 }}>
+                    {col.phase}
+                  </h3>
+                  <div className="mt-3 brut-flat border-[2px] bg-mint/40 p-2.5">
+                    <p className="slide-caption font-extrabold text-forest-deep leading-tight" style={{ fontSize: 18 }}>
+                      {col.question}
+                    </p>
+                  </div>
+                </div>
+                <p className="slide-caption mt-4 opacity-85 leading-relaxed font-medium" style={{ fontSize: 16 }}>
+                  {col.desc}
+                </p>
+              </Card>
+            ))}
+
+            {/* 4th card in row 2: Closed Loop Principle */}
+            <Card tone="forest" className="p-6 flex flex-col justify-center">
+              <span className="slide-kicker text-mint font-bold" style={{ fontSize: 16 }}>The Framework Goal</span>
+              <p className="slide-body font-display text-paper font-bold mt-2 leading-snug" style={{ fontSize: 22 }}>
+                Evidence connects initial community concern directly to enforceable, lasting policy change.
               </p>
             </Card>
-          ))}
+          </div>
         </div>
       </SlideLayout>
     ),
