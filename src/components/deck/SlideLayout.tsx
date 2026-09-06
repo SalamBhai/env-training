@@ -20,11 +20,17 @@ export function SlideLayout({
   return (
     <div className={`slide-content ${bg} ${fg}`}>
       <div className={`absolute inset-0 grid-paper ${tone === "forest" ? "opacity-25" : ""}`} />
-      <div className="relative flex h-full flex-col px-[96px] py-[64px]">
+      <div className="relative flex h-full flex-col justify-between px-[80px] py-[44px]">
         {/* Header */}
-        <header className="flex items-center justify-between">
+        <header className="flex shrink-0 items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="slide-kicker font-bold tracking-wider">{label ?? "Environmental Advocacy"}</span>
+            <span
+              className={`slide-kicker font-bold tracking-wider brut-flat border-[3px] px-4 py-1.5 ${
+                tone === "forest" ? "bg-mint text-ink" : "bg-paper text-ink"
+              }`}
+            >
+              {label ?? "Environmental Advocacy"}
+            </span>
           </div>
           {typeof index === "number" && typeof total === "number" ? (
             <span
@@ -38,14 +44,22 @@ export function SlideLayout({
         </header>
 
         {/* Content Body */}
-        <main className="flex min-h-0 flex-1 flex-col justify-center py-[36px]">{children}</main>
+        <main className="flex min-h-0 flex-1 flex-col justify-between py-3 overflow-hidden">
+          {children}
+        </main>
 
         {/* Footer */}
-        <footer className="flex items-center justify-between">
-          <span className="slide-footer tracking-widest uppercase opacity-70 font-semibold" style={{ fontSize: 16 }}>
+        <footer className="flex shrink-0 items-center justify-between border-t-[2px] border-ink/20 pt-2.5">
+          <span
+            className="slide-footer tracking-widest uppercase opacity-75 font-semibold"
+            style={{ fontSize: 16 }}
+          >
             Sheriffdeen O. Saula · Community Evidence Gathering
           </span>
-          <span className="slide-footer tracking-widest uppercase opacity-70 font-semibold" style={{ fontSize: 16 }}>
+          <span
+            className="slide-footer tracking-widest uppercase opacity-75 font-semibold"
+            style={{ fontSize: 16 }}
+          >
             From Environmental Concern to Community Action
           </span>
         </footer>
@@ -90,7 +104,7 @@ export function Kicker({
 
   return (
     <div className="flex">
-      <span className={`slide-kicker brut-flat border-[3px] px-5 py-2 ${bg}`}>
+      <span className={`slide-kicker brut-flat border-[3px] px-4 py-1.5 ${bg}`}>
         {children}
       </span>
     </div>
@@ -99,9 +113,9 @@ export function Kicker({
 
 export function Bullet({ children }: { children: ReactNode }) {
   return (
-    <li className="flex items-start gap-4">
-      <span className="mt-[8px] block h-[16px] w-[16px] shrink-0 border-[3px] border-ink bg-mint" />
-      <span className="slide-body font-medium">{children}</span>
+    <li className="flex items-start gap-3.5">
+      <span className="mt-[6px] block h-[14px] w-[14px] shrink-0 border-[3px] border-ink bg-mint" />
+      <span className="slide-body font-medium leading-snug">{children}</span>
     </li>
   );
 }

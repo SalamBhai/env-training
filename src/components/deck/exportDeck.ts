@@ -1,4 +1,4 @@
-import { toPng, toJpeg } from "html-to-image";
+import { toJpeg } from "html-to-image";
 import jsPDF from "jspdf";
 import { zipSync } from "fflate";
 
@@ -35,7 +35,6 @@ function base64ToUint8Array(base64: string): Uint8Array {
 }
 
 export async function captureSlide(el: HTMLElement, quality = 0.9): Promise<string> {
-  // Capture as high-quality JPEG for lightweight file size and fast generation
   const dataUrl = await toJpeg(el, {
     width: W,
     height: H,
@@ -46,7 +45,7 @@ export async function captureSlide(el: HTMLElement, quality = 0.9): Promise<stri
 }
 
 /**
- * Lightweight ZIP export using fflate (8KB zip engine)
+ * Lightweight ZIP export using fflate
  */
 export async function downloadAllPngsZip(
   els: HTMLElement[],
@@ -61,8 +60,7 @@ export async function downloadAllPngsZip(
     const filename = slideFilename(i, titles[i], "jpg");
     zipFiles[filename] = base64ToUint8Array(base64);
     onProgress?.(i + 1, els.length);
-    // Allow UI thread to breathe
-    await new Promise((r) => setTimeout(r, 40));
+    await new Promise((r) => setTimeout(r, 30));
   }
 
   const zipped = zipSync(zipFiles, { level: 6 });
@@ -71,7 +69,7 @@ export async function downloadAllPngsZip(
 }
 
 /**
- * Lightweight PDF export using jsPDF with compressed images
+ * Lightweight PDF export with clickable hyperlink annotations
  */
 export async function downloadPdf(
   els: HTMLElement[],
@@ -86,13 +84,31 @@ export async function downloadPdf(
   });
 
   for (let i = 0; i < els.length; i++) {
-    const dataUrl = await captureSlide(els[i], 0.88);
+    const el = els[i];
+    const dataUrl = await captureSlide(el, 0.88);
     if (i > 0) {
       pdf.addPage([W, H], "landscape");
     }
     pdf.addImage(dataUrl, "JPEG", 0, 0, W, H, undefined, "FAST");
+
+    // Add clickable interactive PDF link annotations
+    const slideRect = el.getBoundingClientRect();
+    const anchorTags = el.querySelectorAll<HTMLAnchorElement>("a[href]");
+    anchorTags.forEach((anchor) => {
+      const rect = anchor.getBoundingClientRect();
+      const href = anchor.href;
+      if (!href || href === "#" || href.startsWith("javascript:")) return;
+
+      const x = ((rect.left - slideRect.left) / slideRect.width) * W;
+      const y = ((rect.top - slideRect.top) / slideRect.height) * H;
+      const w = (rect.width / slideRect.width) * W;
+      const h = (rect.height / slideRect.height) * H;
+
+      pdf.link(x, y, w, h, { url: href });
+    });
+
     onProgress?.(i + 1, els.length);
-    await new Promise((r) => setTimeout(r, 40));
+    await new Promise((r) => setTimeout(r, 30));
   }
 
   pdf.save(filename);
